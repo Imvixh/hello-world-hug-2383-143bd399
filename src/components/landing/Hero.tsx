@@ -1,9 +1,3 @@
-import { Check } from "lucide-react";
-
-import avatar1 from "@/assets/avatar-1.jpg";
-import avatar2 from "@/assets/avatar-2.jpg";
-import avatar3 from "@/assets/avatar-3.jpg";
-import avatar4 from "@/assets/avatar-4.jpg";
 
 import {
   DriveIcon,
@@ -44,8 +38,6 @@ const SPARKS = [
   { top: "31%", right: "22%", size: 16, color: "oklch(0.68 0.2 300)" },
   { top: "55%", right: "6%", size: 10, color: "oklch(0.66 0.2 300)" },
 ];
-
-const AVATARS = [avatar1, avatar4, avatar3, avatar2];
 
 export function Hero() {
   return (
@@ -147,41 +139,7 @@ export function Hero() {
           </form>
         </Reveal>
 
-        <Reveal delay={320}>
-          <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[0.9rem] text-foreground/75">
-            {["No credit card required", "14-day free trial", "Cancel anytime"].map(
-              (t) => (
-                <li key={t} className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-primary" strokeWidth={3} />
-                  {t}
-                </li>
-              ),
-            )}
-          </ul>
-        </Reveal>
-
-        <Reveal delay={400}>
-          <div className="mt-9 flex items-center justify-center gap-4">
-            <div className="flex -space-x-3">
-              {AVATARS.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt=""
-                  width={512}
-                  height={512}
-                  className="h-11 w-11 rounded-full border-2 border-card object-cover"
-                />
-              ))}
-            </div>
-            <p className="max-w-[265px] text-[0.95rem] leading-[1.45] text-foreground/80">
-              Join <strong className="font-bold text-foreground">10,000+</strong>{" "}
-              creators, brands, and agencies using Grodo
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={480} className="mt-12">
+        <Reveal delay={320} className="mt-12">
           <DashboardPreview />
         </Reveal>
       </div>

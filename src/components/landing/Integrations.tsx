@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 import {
   DriveIcon,
   DropboxIcon,
@@ -48,11 +50,14 @@ export function Integrations() {
         <Reveal delay={190}>
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-5">
             {ICONS.map((Icon, i) => (
-              <li
-                key={i}
-                className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-border/70 bg-card shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-float)]"
-              >
-                <Icon className="h-8 w-8" />
+              <li key={i}>
+                <Link
+                  to="/"
+                  aria-label="Integration"
+                  className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-border/70 bg-card shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-float)]"
+                >
+                  <Icon className="h-8 w-8" />
+                </Link>
               </li>
             ))}
             <li className="flex h-[68px] w-[68px] flex-col items-center justify-center rounded-full border border-border/70 bg-card text-[0.78rem] font-semibold leading-tight text-muted-foreground shadow-[var(--shadow-card)]">

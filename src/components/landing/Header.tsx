@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -238,12 +239,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            type="button"
+          <Link
+            to="/login"
             className="hidden rounded-xl border border-border px-5 py-2.5 text-[0.95rem] font-semibold text-foreground transition-colors hover:bg-secondary sm:block"
           >
             Log in
-          </button>
+          </Link>
           <button
             type="button"
             className="cta-gradient hidden items-center gap-2 rounded-xl px-5 py-2.5 text-[0.95rem] font-semibold text-primary-foreground shadow-[0_8px_20px_-8px_oklch(0.45_0.24_280/0.6)] transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"

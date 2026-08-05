@@ -263,3 +263,43 @@
   }
 }
 
+
+/* --- directional scroll reveal (feature showcase) ------------------- */
+
+@keyframes grodo-reveal-up {
+  from { opacity: 0; transform: translate3d(0, 28px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes grodo-reveal-left {
+  from { opacity: 0; transform: translate3d(-38px, 0, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes grodo-reveal-right {
+  from { opacity: 0; transform: translate3d(38px, 0, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes grodo-reveal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@utility rv {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+@utility rv-up {
+  animation: grodo-reveal-up 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@utility rv-left {
+  animation: grodo-reveal-left 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@utility rv-right {
+  animation: grodo-reveal-right 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@utility rv-fade {
+  animation: grodo-reveal-fade 480ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1 !important; }
+}

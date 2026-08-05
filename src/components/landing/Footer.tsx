@@ -112,36 +112,6 @@ export function Footer() {
               ))}
             </ul>
 
-            <div className="mt-8 border-t border-footer-border pt-7">
-              <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-light/20">
-                  <Heart className="h-4 w-4 fill-primary-light text-primary-light" />
-                </span>
-                <span className="text-[0.92rem] font-semibold leading-[1.4]">
-                  Loved by creators
-                  <br />
-                  worldwide
-                </span>
-              </div>
-              <div className="mt-4 flex items-center">
-                <div className="flex -space-x-3">
-                  {[avatar1, avatar4, avatar2, avatar3].map((src, i) => (
-                    <img
-                      key={i}
-                      src={src}
-                      alt=""
-                      width={512}
-                      height={512}
-                      loading="lazy"
-                      className="h-9 w-9 rounded-full border-2 border-footer object-cover"
-                    />
-                  ))}
-                </div>
-                <span className="ml-3 rounded-full bg-primary-light/25 px-3 py-1.5 text-[0.8rem] font-semibold">
-                  25K+
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* link columns + newsletter */}

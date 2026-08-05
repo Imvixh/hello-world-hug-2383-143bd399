@@ -1,18 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Features } from "@/components/landing/Features";
-import { FeatureShowcase } from "@/components/landing/FeatureShowcase";
 import { Footer } from "@/components/landing/Footer";
+import { GrowCta } from "@/components/landing/GrowCta";
 import { Header } from "@/components/landing/Header";
-import { Hero } from "@/components/landing/Hero";
 import { Integrations } from "@/components/landing/Integrations";
-import { WhyGrodo } from "@/components/landing/WhyGrodo";
+import { Pricing } from "@/components/landing/Pricing";
 
-const title = "Grodo — Your AI Social Media Workspace";
+const title = "Pricing — Grodo AI Social Media Workspace";
 const description =
-  "Create, analyze, schedule, and grow – all in one place. Smart insights to help you post better and grow faster.";
+  "Simple plans, powerful growth. Compare Grodo's Free, Standard, and Advanced plans with monthly and yearly billing.";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title },
@@ -23,20 +21,17 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: PricingPage,
 });
 
-function Index() {
+function PricingPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-
-        <Hero />
-        <Features />
-        <FeatureShowcase />
+        <Pricing />
         <Integrations />
-        <WhyGrodo />
+        <GrowCta />
       </main>
       <Footer />
     </div>

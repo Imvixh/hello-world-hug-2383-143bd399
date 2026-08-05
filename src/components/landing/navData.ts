@@ -247,5 +247,5 @@ export const NAV: NavEntry[] = [
       },
     ],
   },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Pricing", href: "/pricing" },
 ];
