@@ -101,8 +101,7 @@ export function Pricing() {
             Pricing
           </span>
           <h1 className="mt-5 text-[2.1rem] font-extrabold leading-[1.15] tracking-[-0.035em] sm:text-[3rem]">
-            Simple Plans.{" "}
-            <span className="text-primary-light">Powerful Growth.</span>
+            Simple Plans. <span className="text-primary-light">Powerful Growth.</span>
           </h1>
           <p className="mx-auto mt-3 max-w-[560px] text-[1rem] text-muted-foreground">
             Choose the plan that fits your content journey.
@@ -170,15 +169,10 @@ export function Pricing() {
                 <h2 className="mt-5 text-[1.5rem] font-extrabold tracking-[-0.03em]">
                   {plan.name}
                 </h2>
-                <p className="mt-1 text-[0.85rem] text-muted-foreground">
-                  {plan.tagline}
-                </p>
+                <p className="mt-1 text-[0.85rem] text-muted-foreground">{plan.tagline}</p>
 
                 <div className="mt-5 min-h-[74px]">
-                  <p
-                    key={yearly ? "y" : "m"}
-                    className="rv rv-fade flex items-baseline gap-1.5"
-                  >
+                  <p key={yearly ? "y" : "m"} className="rv rv-fade flex items-baseline gap-1.5">
                     <span className="text-[2.4rem] font-extrabold tracking-[-0.04em]">
                       {yearly ? plan.yearly : plan.monthly}
                     </span>
@@ -197,24 +191,17 @@ export function Pricing() {
                     </p>
                   ) : null}
                   {plan.note ? (
-                    <p className="mt-1 text-[0.8rem] font-medium text-primary">
-                      {plan.note}
-                    </p>
+                    <p className="mt-1 text-[0.8rem] font-medium text-primary">{plan.note}</p>
                   ) : null}
                 </div>
 
                 <div className="mt-4 border-t border-border/70 pt-4">
-                  <p className="text-[0.82rem] font-medium text-muted-foreground">
-                    {plan.heading}
-                  </p>
+                  <p className="text-[0.82rem] font-medium text-muted-foreground">{plan.heading}</p>
                   <ul className="mt-3 space-y-2.5">
                     {plan.features.map((f) => (
                       <li key={f.label} className="flex items-start gap-2.5">
                         <span className="mt-[1px] flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary">
-                          <Check
-                            className="h-2.5 w-2.5 text-primary-foreground"
-                            strokeWidth={4}
-                          />
+                          <Check className="h-2.5 w-2.5 text-primary-foreground" strokeWidth={4} />
                         </span>
                         <span className="text-[0.85rem] leading-[1.45]">
                           {f.label}
@@ -246,9 +233,7 @@ export function Pricing() {
                 {plan.ghost ? (
                   <>
                     <div className="mt-6 border-t border-border/70 pt-4 text-center">
-                      <p className="text-[0.82rem] text-muted-foreground">
-                        Choose your platform
-                      </p>
+                      <p className="text-[0.82rem] text-muted-foreground">Choose your platform</p>
                       <div className="mt-3 flex justify-center gap-4">
                         <InstagramIcon className="h-7 w-7" />
                         <YouTubeIcon className="h-7 w-7" />
@@ -273,9 +258,7 @@ export function Pricing() {
                 <a.icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 <span>
                   <span className="block text-[0.88rem] font-bold">{a.title}</span>
-                  <span className="block text-[0.8rem] text-muted-foreground">
-                    {a.body}
-                  </span>
+                  <span className="block text-[0.8rem] text-muted-foreground">{a.body}</span>
                 </span>
               </li>
             ))}

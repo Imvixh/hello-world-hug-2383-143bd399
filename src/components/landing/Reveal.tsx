@@ -42,7 +42,6 @@ export function Reveal({
     return () => io.disconnect();
   }, []);
 
-
   return (
     <Tag
       ref={ref as never}

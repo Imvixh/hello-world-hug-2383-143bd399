@@ -89,9 +89,7 @@ function FloatingDashboard() {
             <p className="text-[0.58rem] text-muted-foreground">Total Reach</p>
             <p className="flex items-baseline gap-1.5">
               <span className="text-[0.95rem] font-extrabold">128.7K</span>
-              <span className="text-[0.55rem] font-semibold text-icon-green">
-                ▲ 12.5%
-              </span>
+              <span className="text-[0.55rem] font-semibold text-icon-green">▲ 12.5%</span>
             </p>
             <svg viewBox="0 0 200 40" className="mt-1.5 h-9 w-full">
               <path
@@ -106,13 +104,18 @@ function FloatingDashboard() {
       </div>
 
       <div className="absolute left-[150px] top-[62px] w-[210px] rounded-2xl bg-card p-3.5 shadow-[var(--shadow-app)]">
-        <p className="text-[0.62rem] font-semibold text-muted-foreground">
-          Content Score
-        </p>
+        <p className="text-[0.62rem] font-semibold text-muted-foreground">Content Score</p>
         <div className="mt-1.5 flex items-center gap-2.5">
           <span className="relative inline-flex h-[54px] w-[54px]">
             <svg viewBox="0 0 80 80" className="h-full w-full -rotate-90">
-              <circle cx="40" cy="40" r="34" fill="none" strokeWidth="8" stroke="var(--secondary)" />
+              <circle
+                cx="40"
+                cy="40"
+                r="34"
+                fill="none"
+                strokeWidth="8"
+                stroke="var(--secondary)"
+              />
               <circle
                 cx="40"
                 cy="40"
@@ -134,9 +137,7 @@ function FloatingDashboard() {
       </div>
 
       <div className="absolute left-[22px] top-[150px] w-[200px] rounded-2xl bg-card p-3.5 shadow-[var(--shadow-app)]">
-        <p className="text-[0.6rem] font-semibold text-muted-foreground">
-          Top Platforms
-        </p>
+        <p className="text-[0.6rem] font-semibold text-muted-foreground">Top Platforms</p>
         <ul className="mt-2 space-y-1.5">
           {PLATFORMS.map(({ Icon, label, value }) => (
             <li key={label} className="flex items-center gap-2 text-[0.62rem]">
@@ -237,10 +238,7 @@ function LoginPage() {
 
               <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
                 <div>
-                  <label
-                    htmlFor="login-email"
-                    className="block text-[0.85rem] font-semibold"
-                  >
+                  <label htmlFor="login-email" className="block text-[0.85rem] font-semibold">
                     Email address
                   </label>
                   <div className="mt-2 flex items-center gap-2.5 rounded-xl border border-border px-4 py-3.5 focus-within:border-primary">
@@ -255,10 +253,7 @@ function LoginPage() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="login-password"
-                    className="block text-[0.85rem] font-semibold"
-                  >
+                  <label htmlFor="login-password" className="block text-[0.85rem] font-semibold">
                     Password
                   </label>
                   <div className="mt-2 flex items-center gap-2.5 rounded-xl border border-border px-4 py-3.5 focus-within:border-primary">
@@ -274,10 +269,7 @@ function LoginPage() {
                 </div>
 
                 <div className="flex justify-end">
-                  <button
-                    type="button"
-                    className="text-[0.85rem] font-semibold text-primary"
-                  >
+                  <button type="button" className="text-[0.85rem] font-semibold text-primary">
                     Forgot password?
                   </button>
                 </div>
@@ -322,8 +314,8 @@ function LoginPage() {
                     Your data is secure with Grodo
                   </span>
                   <span className="mt-1 block max-w-[320px] text-[0.85rem] leading-[1.55] text-muted-foreground">
-                    We use enterprise-grade security to protect your data and keep
-                    your content safe.
+                    We use enterprise-grade security to protect your data and keep your content
+                    safe.
                   </span>
                 </span>
               </div>

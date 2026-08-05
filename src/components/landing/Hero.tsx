@@ -1,4 +1,3 @@
-
 import {
   DriveIcon,
   DropboxIcon,
@@ -114,8 +113,8 @@ export function Hero() {
         <Reveal delay={160}>
           <p className="mx-auto mt-6 max-w-[620px] text-center text-[1.05rem] leading-[1.6] text-muted-foreground sm:text-[1.15rem]">
             Create, analyze, schedule, and grow – all in one place.
-            <br className="hidden sm:block" /> Smart insights to help you post
-            better and grow faster.
+            <br className="hidden sm:block" /> Smart insights to help you post better and grow
+            faster.
           </p>
         </Reveal>
 

@@ -13,16 +13,7 @@ export const InstagramIcon = ({ className }: P) => (
       </radialGradient>
     </defs>
     <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig-g)" />
-    <rect
-      x="6"
-      y="6"
-      width="12"
-      height="12"
-      rx="4"
-      fill="none"
-      stroke="#fff"
-      strokeWidth="1.7"
-    />
+    <rect x="6" y="6" width="12" height="12" rx="4" fill="none" stroke="#fff" strokeWidth="1.7" />
     <circle cx="12" cy="12" r="3" fill="none" stroke="#fff" strokeWidth="1.7" />
     <circle cx="17" cy="7" r="1.1" fill="#fff" />
   </svg>
@@ -88,7 +79,6 @@ export const DriveIcon = ({ className }: P) => (
     <path fill="#4285F4" d="M8.6 3.5h6.8L22 15.2h-6.8z" />
     <path fill="#0F9D58" d="M8.6 3.5L2 15.2h6.8L15.4 3.5z" />
     <path fill="#FFCD40" d="M2 15.2h20l-3.4 5.3H5.4z" />
-
   </svg>
 );
 
@@ -123,10 +113,19 @@ export const ThreadsIcon = ({ className }: P) => (
 export function GoogleIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path fill="#4285F4" d="M23.5 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.46a5.5 5.5 0 0 1-2.4 3.6v3h3.87c2.26-2.09 3.57-5.17 3.57-8.63" />
-      <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.94-2.9l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.28v3.09A12 12 0 0 0 12 24" />
+      <path
+        fill="#4285F4"
+        d="M23.5 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.46a5.5 5.5 0 0 1-2.4 3.6v3h3.87c2.26-2.09 3.57-5.17 3.57-8.63"
+      />
+      <path
+        fill="#34A853"
+        d="M12 24c3.24 0 5.96-1.08 7.94-2.9l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.28v3.09A12 12 0 0 0 12 24"
+      />
       <path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58V6.62H1.28a12 12 0 0 0 0 10.76z" />
-      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.43-3.43C17.95 1.19 15.23 0 12 0A12 12 0 0 0 1.28 6.62l3.99 3.09C6.22 6.86 8.87 4.75 12 4.75" />
+      <path
+        fill="#EA4335"
+        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.43-3.43C17.95 1.19 15.23 0 12 0A12 12 0 0 0 1.28 6.62l3.99 3.09C6.22 6.86 8.87 4.75 12 4.75"
+      />
     </svg>
   );
 }

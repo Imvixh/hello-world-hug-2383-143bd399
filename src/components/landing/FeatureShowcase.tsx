@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 
-import { FacebookIcon, InstagramIcon, TikTokIcon } from "./BrandIcons";
+import { InstagramIcon, TikTokIcon } from "./BrandIcons";
 import { GrodoMark } from "./GrodoMark";
 import { RevealDir } from "./RevealDir";
 
@@ -56,9 +56,7 @@ function MockApp({
         </aside>
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 border-b border-border/70 px-4 py-3">
-            {back ? (
-              <ChevronLeft className="h-3.5 w-3.5 text-muted-foreground" />
-            ) : null}
+            {back ? <ChevronLeft className="h-3.5 w-3.5 text-muted-foreground" /> : null}
             <span className="text-[0.82rem] font-bold tracking-tight">{title}</span>
             {right ? <span className="ml-auto">{right}</span> : null}
           </div>
@@ -147,9 +145,7 @@ function ScorePreview() {
               </p>
             </div>
           </div>
-          <p className="mt-3 text-[0.66rem] font-semibold text-muted-foreground">
-            Score Breakdown
-          </p>
+          <p className="mt-3 text-[0.66rem] font-semibold text-muted-foreground">Score Breakdown</p>
           <ul className="mt-2 space-y-1.5">
             {rows.map((r) => (
               <li key={r.label} className="flex items-center gap-2">
@@ -197,7 +193,10 @@ function CaptionPreview() {
       body: "Sunrise + coffee = the perfect start ☕🌄 What's your morning fuel?",
       best: true,
     },
-    { body: "Morning views like these hit different. Grateful for little moments. 🌿", best: false },
+    {
+      body: "Morning views like these hit different. Grateful for little moments. 🌿",
+      best: false,
+    },
   ];
   return (
     <MockApp title="AI Caption Generator">
@@ -223,13 +222,8 @@ function CaptionPreview() {
       </div>
       <ul className="mt-2 space-y-2">
         {results.map((r, i) => (
-          <li
-            key={i}
-            className="flex items-start gap-2 rounded-lg border border-border/70 p-2.5"
-          >
-            <span className="text-[0.62rem] font-semibold text-muted-foreground">
-              {i + 1}
-            </span>
+          <li key={i} className="flex items-start gap-2 rounded-lg border border-border/70 p-2.5">
+            <span className="text-[0.62rem] font-semibold text-muted-foreground">{i + 1}</span>
             <span className="flex-1 text-[0.66rem] leading-[1.45]">{r.body}</span>
             {r.best ? (
               <span className="shrink-0 rounded-md bg-icon-green/12 px-1.5 py-0.5 text-[0.55rem] font-semibold text-icon-green">
@@ -405,9 +399,7 @@ function PlannerPreview() {
       back
       right={
         <span className="flex gap-1">
-          <span className="rounded-md px-2 py-1 text-[0.58rem] text-muted-foreground">
-            Week
-          </span>
+          <span className="rounded-md px-2 py-1 text-[0.58rem] text-muted-foreground">Week</span>
           <span className="rounded-md bg-primary-soft px-2 py-1 text-[0.58rem] font-semibold text-primary">
             Month
           </span>
@@ -421,10 +413,7 @@ function PlannerPreview() {
       </div>
       <div className="mt-2 grid grid-cols-7 gap-1.5">
         {cells.map((c, i) => (
-          <div
-            key={i}
-            className="min-h-[46px] rounded-lg border border-border/60 p-1"
-          >
+          <div key={i} className="min-h-[46px] rounded-lg border border-border/60 p-1">
             <span
               className={`text-[0.55rem] ${c.muted ? "text-muted-foreground/50" : "text-muted-foreground"}`}
             >
@@ -458,11 +447,7 @@ function AnalyticsPreview() {
   return (
     <MockApp
       title="Analytics Dashboard"
-      right={
-        <span className="text-[0.58rem] text-muted-foreground">
-          May 20 – May 26, 2024
-        </span>
-      }
+      right={<span className="text-[0.58rem] text-muted-foreground">May 20 – May 26, 2024</span>}
     >
       <div className="grid grid-cols-3 gap-2">
         {stats.map((s) => (
@@ -470,9 +455,7 @@ function AnalyticsPreview() {
             <p className="text-[0.55rem] text-muted-foreground">{s.label}</p>
             <p className="mt-1 flex items-baseline gap-1.5">
               <span className="text-[0.95rem] font-extrabold">{s.value}</span>
-              <span className="text-[0.55rem] font-semibold text-icon-green">
-                ▲ {s.delta}
-              </span>
+              <span className="text-[0.55rem] font-semibold text-icon-green">▲ {s.delta}</span>
             </p>
           </div>
         ))}
@@ -608,9 +591,7 @@ function Copyside({ block }: { block: Block }) {
       >
         <block.icon className="h-5 w-5 text-primary-foreground" />
       </span>
-      <h3 className="mt-4 text-[1.25rem] font-extrabold tracking-[-0.03em]">
-        {block.title}
-      </h3>
+      <h3 className="mt-4 text-[1.25rem] font-extrabold tracking-[-0.03em]">{block.title}</h3>
       <p className="mt-3 max-w-[330px] text-[0.9rem] leading-[1.6] text-muted-foreground">
         {block.body}
       </p>
@@ -653,9 +634,7 @@ export function FeatureShowcase() {
                   </>
                 ) : (
                   <>
-                    <div className="order-2 p-4 lg:order-1 lg:p-6">
-                      {block.preview()}
-                    </div>
+                    <div className="order-2 p-4 lg:order-1 lg:p-6">{block.preview()}</div>
                     <div className="order-1 lg:order-2">
                       <Copyside block={block} />
                     </div>
