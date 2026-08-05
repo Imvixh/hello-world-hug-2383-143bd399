@@ -13,16 +13,7 @@ export const InstagramIcon = ({ className }: P) => (
       </radialGradient>
     </defs>
     <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig-g)" />
-    <rect
-      x="6"
-      y="6"
-      width="12"
-      height="12"
-      rx="4"
-      fill="none"
-      stroke="#fff"
-      strokeWidth="1.7"
-    />
+    <rect x="6" y="6" width="12" height="12" rx="4" fill="none" stroke="#fff" strokeWidth="1.7" />
     <circle cx="12" cy="12" r="3" fill="none" stroke="#fff" strokeWidth="1.7" />
     <circle cx="17" cy="7" r="1.1" fill="#fff" />
   </svg>
@@ -88,7 +79,6 @@ export const DriveIcon = ({ className }: P) => (
     <path fill="#4285F4" d="M8.6 3.5h6.8L22 15.2h-6.8z" />
     <path fill="#0F9D58" d="M8.6 3.5L2 15.2h6.8L15.4 3.5z" />
     <path fill="#FFCD40" d="M2 15.2h20l-3.4 5.3H5.4z" />
-
   </svg>
 );
 
@@ -119,3 +109,34 @@ export const ThreadsIcon = ({ className }: P) => (
     />
   </svg>
 );
+
+export function GoogleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#4285F4"
+        d="M23.5 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.46a5.5 5.5 0 0 1-2.4 3.6v3h3.87c2.26-2.09 3.57-5.17 3.57-8.63"
+      />
+      <path
+        fill="#34A853"
+        d="M12 24c3.24 0 5.96-1.08 7.94-2.9l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.28v3.09A12 12 0 0 0 12 24"
+      />
+      <path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58V6.62H1.28a12 12 0 0 0 0 10.76z" />
+      <path
+        fill="#EA4335"
+        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.43-3.43C17.95 1.19 15.23 0 12 0A12 12 0 0 0 1.28 6.62l3.99 3.09C6.22 6.86 8.87 4.75 12 4.75"
+      />
+    </svg>
+  );
+}
+
+export function AppleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M16.37 12.78c.03 3.02 2.65 4.02 2.68 4.04-.02.07-.42 1.44-1.38 2.85-.83 1.22-1.7 2.43-3.06 2.46-1.34.02-1.77-.79-3.3-.79s-2 .77-3.27.82c-1.31.05-2.31-1.32-3.15-2.53-1.72-2.48-3.03-7.02-1.27-10.08.88-1.52 2.44-2.49 4.14-2.51 1.29-.03 2.5.87 3.29.87s2.27-1.07 3.83-.92c.65.03 2.48.26 3.66 1.98-.1.06-2.19 1.28-2.17 3.81M14.06 3.5c.7-.85 1.17-2.03 1.04-3.2-1 .04-2.22.67-2.94 1.51-.65.75-1.21 1.95-1.06 3.1 1.12.09 2.26-.57 2.96-1.41"
+      />
+    </svg>
+  );
+}

@@ -98,8 +98,8 @@ export function WhyGrodo() {
 
         <Reveal delay={130}>
           <p className="mx-auto mt-4 max-w-[620px] text-center text-[1.05rem] leading-[1.55] text-muted-foreground">
-            Grodo is built for one mission — to help you beat the algorithm,
-            grow from zero, and make every post count.
+            Grodo is built for one mission — to help you beat the algorithm, grow from zero, and
+            make every post count.
           </p>
         </Reveal>
 
@@ -122,9 +122,7 @@ export function WhyGrodo() {
                   style={{ backgroundColor: c.accent }}
                 />
 
-                <p className="mt-5 text-[0.95rem] leading-[1.65] text-muted-foreground">
-                  {c.body}
-                </p>
+                <p className="mt-5 text-[0.95rem] leading-[1.65] text-muted-foreground">{c.body}</p>
 
                 <ul
                   className="mt-7 space-y-3 rounded-xl px-5 py-5 text-left"

@@ -47,18 +47,14 @@ export function DashboardPreview() {
         <aside className="hidden w-[200px] shrink-0 border-r border-border/70 px-3 py-5 md:block">
           <div className="mb-5 flex items-center gap-2 px-2">
             <GrodoMark className="h-5 w-5" id="grodo-mark-dash" />
-            <span className="text-[0.95rem] font-extrabold tracking-tight">
-              Grodo
-            </span>
+            <span className="text-[0.95rem] font-extrabold tracking-tight">Grodo</span>
           </div>
           <ul className="space-y-0.5">
             {NAV.map(({ label, icon: Icon, active, badge }) => (
               <li key={label}>
                 <span
                   className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-[0.8rem] font-medium ${
-                    active
-                      ? "bg-primary-soft text-primary"
-                      : "text-muted-foreground"
+                    active ? "bg-primary-soft text-primary" : "text-muted-foreground"
                   }`}
                 >
                   <Icon className="h-3.5 w-3.5" />
@@ -78,9 +74,7 @@ export function DashboardPreview() {
         <div className="min-w-0 flex-1 px-5 py-5 sm:px-7">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h3 className="text-[1.05rem] font-bold tracking-tight">
-                Welcome back, Ankit 👋
-              </h3>
+              <h3 className="text-[1.05rem] font-bold tracking-tight">Welcome back, Ankit 👋</h3>
               <p className="mt-0.5 text-[0.75rem] text-muted-foreground">
                 Here's what's happening with your content today.
               </p>
@@ -108,14 +102,10 @@ export function DashboardPreview() {
                 key={s.label}
                 className="rounded-xl border border-border/80 bg-card p-3.5 transition-shadow duration-300 hover:shadow-[var(--shadow-card)]"
               >
-                <p className="text-[0.72rem] text-muted-foreground">
-                  {s.label}
-                </p>
+                <p className="text-[0.72rem] text-muted-foreground">{s.label}</p>
                 <p className="mt-1.5 flex items-baseline gap-2 text-[1.25rem] font-bold tracking-tight">
                   {s.value}
-                  <span className="text-[0.65rem] font-semibold text-icon-green">
-                    ▲ {s.delta}
-                  </span>
+                  <span className="text-[0.65rem] font-semibold text-icon-green">▲ {s.delta}</span>
                 </p>
               </div>
             ))}
@@ -143,34 +133,17 @@ export function DashboardPreview() {
                 </span>
               </div>
               <div className="mt-3 flex items-center gap-2.5">
-                {[
-                  InstagramIcon,
-                  FacebookIcon,
-                  TikTokIcon,
-                  LinkedInIcon,
-                  YouTubeIcon,
-                  XIcon,
-                ].map((Icon, i) => (
-                  <Icon key={i} className="h-6 w-6" />
-                ))}
+                {[InstagramIcon, FacebookIcon, TikTokIcon, LinkedInIcon, YouTubeIcon, XIcon].map(
+                  (Icon, i) => (
+                    <Icon key={i} className="h-6 w-6" />
+                  ),
+                )}
               </div>
-              <svg
-                viewBox="0 0 400 70"
-                className="mt-3 h-[70px] w-full"
-                aria-hidden="true"
-              >
+              <svg viewBox="0 0 400 70" className="mt-3 h-[70px] w-full" aria-hidden="true">
                 <defs>
                   <linearGradient id="spark" x1="0" y1="0" x2="0" y2="1">
-                    <stop
-                      offset="0%"
-                      stopColor="oklch(0.55 0.2 285)"
-                      stopOpacity="0.35"
-                    />
-                    <stop
-                      offset="100%"
-                      stopColor="oklch(0.55 0.2 285)"
-                      stopOpacity="0"
-                    />
+                    <stop offset="0%" stopColor="oklch(0.55 0.2 285)" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="oklch(0.55 0.2 285)" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 <path
@@ -192,13 +165,7 @@ export function DashboardPreview() {
                   [300, 28],
                   [350, 12],
                 ].map(([x, y]) => (
-                  <circle
-                    key={x}
-                    cx={x}
-                    cy={y}
-                    r="2.4"
-                    fill="oklch(0.4 0.22 280)"
-                  />
+                  <circle key={x} cx={x} cy={y} r="2.4" fill="oklch(0.4 0.22 280)" />
                 ))}
               </svg>
             </div>

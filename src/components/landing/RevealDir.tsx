@@ -2,17 +2,29 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-/** Fades + lifts children into view once, subtly. */
-export function Reveal({
+type Direction = "up" | "left" | "right" | "fade";
+
+const CLASS: Record<Direction, string> = {
+  up: "rv-up",
+  left: "rv-left",
+  right: "rv-right",
+  fade: "rv-fade",
+};
+
+/**
+ * Reveals children once, when they first enter the viewport.
+ * Subtle fade + slide, 520ms ease-out, no scale, no bounce.
+ */
+export function RevealDir({
   children,
-  className,
+  direction = "up",
   delay = 0,
-  as: Tag = "div",
+  className,
 }: {
   children: ReactNode;
-  className?: string;
+  direction?: Direction;
   delay?: number;
-  as?: "div" | "section" | "li" | "span";
+  className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
@@ -20,11 +32,6 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    // Already on screen at mount (hero, above the fold): reveal right away.
-    if (el.getBoundingClientRect().top < window.innerHeight) {
-      setShown(true);
-      return;
-    }
     if (typeof IntersectionObserver === "undefined") {
       setShown(true);
       return;
@@ -36,19 +43,19 @@ export function Reveal({
           io.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
   return (
-    <Tag
-      ref={ref as never}
-      className={cn("reveal", shown && "reveal-in", className)}
+    <div
+      ref={ref}
+      className={cn("rv", shown && CLASS[direction], className)}
       style={{ animationDelay: `${delay}ms` }}
     >
       {children}
-    </Tag>
+    </div>
   );
 }

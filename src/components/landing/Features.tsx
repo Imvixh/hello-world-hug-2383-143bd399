@@ -1,11 +1,4 @@
-import {
-  BarChart3,
-  CalendarCheck,
-  CalendarRange,
-  Hash,
-  PenLine,
-  Sparkles,
-} from "lucide-react";
+import { BarChart3, CalendarCheck, CalendarRange, Hash, PenLine, Sparkles } from "lucide-react";
 
 import { Reveal } from "./Reveal";
 
@@ -50,10 +43,7 @@ const FEATURES = [
 
 export function Features() {
   return (
-    <section
-      id="features"
-      className="relative overflow-hidden bg-surface-tint py-20 lg:py-24"
-    >
+    <section id="features" className="relative overflow-hidden bg-surface-tint py-20 lg:py-24">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-[8%] top-16 hidden lg:block"
@@ -100,8 +90,8 @@ export function Features() {
 
         <Reveal delay={130}>
           <p className="mt-4 max-w-[430px] text-[0.98rem] leading-[1.6] text-muted-foreground">
-            Grodo brings all the tools you need to create, analyze, schedule,
-            and grow – in one simple workspace.
+            Grodo brings all the tools you need to create, analyze, schedule, and grow – in one
+            simple workspace.
           </p>
         </Reveal>
 
@@ -117,9 +107,7 @@ export function Features() {
                     <f.icon className="h-5 w-5 text-primary-foreground" />
                   </span>
                   <div>
-                    <h3 className="text-[1.02rem] font-bold tracking-tight">
-                      {f.title}
-                    </h3>
+                    <h3 className="text-[1.02rem] font-bold tracking-tight">{f.title}</h3>
                     <p className="mt-2.5 text-[0.88rem] leading-[1.6] text-muted-foreground">
                       {f.body}
                     </p>

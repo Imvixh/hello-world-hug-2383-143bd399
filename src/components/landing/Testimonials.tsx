@@ -29,8 +29,8 @@ const QUOTES: Quote[] = [
   {
     body: (
       <>
-        Grodo literally changed the game for me. The AI caption and hashtag
-        suggestions help my travel reels reach 3X more people!
+        Grodo literally changed the game for me. The AI caption and hashtag suggestions help my
+        travel reels reach 3X more people!
       </>
     ),
     name: "Wanderlust Sam",
@@ -43,9 +43,8 @@ const QUOTES: Quote[] = [
     body: (
       <>
         As a gymnast, I need my content to stand out. Grodo helps me post at the{" "}
-        <strong className="font-bold text-foreground">perfect time</strong> with
-        the <strong className="font-bold text-foreground">right hashtags</strong>
-        . Love it!
+        <strong className="font-bold text-foreground">perfect time</strong> with the{" "}
+        <strong className="font-bold text-foreground">right hashtags</strong>. Love it!
       </>
     ),
     name: "FlipWithAva",
@@ -57,8 +56,8 @@ const QUOTES: Quote[] = [
   {
     body: (
       <>
-        Grodo's AI Content Score is a lifesaver. Now I know exactly what works
-        and my engagement has never been better.
+        Grodo's AI Content Score is a lifesaver. Now I know exactly what works and my engagement has
+        never been better.
       </>
     ),
     name: "Reel Karti Kudi",
@@ -70,8 +69,8 @@ const QUOTES: Quote[] = [
   {
     body: (
       <>
-        The analytics dashboard is 🔥. I understand my audience so much better
-        and grow every single week.
+        The analytics dashboard is 🔥. I understand my audience so much better and grow every single
+        week.
       </>
     ),
     name: "Digital Dhruv",
@@ -84,10 +83,8 @@ const QUOTES: Quote[] = [
     body: (
       <>
         From planning to posting, everything is in one place.{" "}
-        <strong className="font-bold text-foreground">
-          Grodo saves me hours every week
-        </strong>{" "}
-        so I can focus on creating.
+        <strong className="font-bold text-foreground">Grodo saves me hours every week</strong> so I
+        can focus on creating.
       </>
     ),
     name: "LensOfRiya",
@@ -100,8 +97,8 @@ const QUOTES: Quote[] = [
     body: (
       <>
         I make comedy skits and timing is{" "}
-        <strong className="font-bold text-foreground">everything</strong>. Grodo
-        helps me go viral consistently. Total game-changer!
+        <strong className="font-bold text-foreground">everything</strong>. Grodo helps me go viral
+        consistently. Total game-changer!
       </>
     ),
     name: "Comedy Chintu",
@@ -155,8 +152,8 @@ export function Testimonials() {
 
         <Reveal delay={130}>
           <p className="mx-auto mt-3 max-w-[620px] text-center text-[1rem] leading-[1.55] text-muted-foreground">
-            Creators from all walks of life are growing faster, creating
-            smarter, and reaching more people with Grodo.
+            Creators from all walks of life are growing faster, creating smarter, and reaching more
+            people with Grodo.
           </p>
         </Reveal>
 
@@ -166,9 +163,7 @@ export function Testimonials() {
               <article className="h-full rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_-28px_oklch(0.35_0.16_280/0.45)]">
                 <QuoteMark className="h-[22px] w-[28px] text-primary-light" />
 
-                <p className="mt-3 text-[0.93rem] leading-[1.65] text-foreground/85">
-                  {q.body}
-                </p>
+                <p className="mt-3 text-[0.93rem] leading-[1.65] text-foreground/85">{q.body}</p>
                 <Stars />
                 <div className="mt-5 flex items-center gap-3">
                   <span
@@ -178,12 +173,8 @@ export function Testimonials() {
                     <q.icon className="h-5 w-5" style={{ color: q.tint }} />
                   </span>
                   <span>
-                    <span className="block text-[0.92rem] font-bold">
-                      {q.name}
-                    </span>
-                    <span className="block text-[0.8rem] text-muted-foreground">
-                      {q.role}
-                    </span>
+                    <span className="block text-[0.92rem] font-bold">{q.name}</span>
+                    <span className="block text-[0.8rem] text-muted-foreground">{q.role}</span>
                   </span>
                 </div>
               </article>
@@ -237,11 +228,7 @@ export function Testimonials() {
                   </button>
                 </form>
                 <ul className="mt-3 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[0.78rem] text-primary-foreground/85 lg:justify-start">
-                  {[
-                    "No credit card required",
-                    "14-day free trial",
-                    "Cancel anytime",
-                  ].map((t) => (
+                  {["No credit card required", "14-day free trial", "Cancel anytime"].map((t) => (
                     <li key={t} className="flex items-center gap-1.5">
                       <Check className="h-3.5 w-3.5" strokeWidth={3} />
                       {t}

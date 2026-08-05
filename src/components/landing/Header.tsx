@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -40,35 +41,35 @@ function MegaPanel({ entry }: { entry: NavEntry }) {
               </p>
             ) : null}
             <div className={`grid gap-1 ${group.cols ? COLS[group.cols] : ""}`}>
-
-            {group.items.map((item) => (
-              <a
-                key={item.title}
-                href="#features"
-                data-mega-item
-                className="group flex items-start gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-secondary focus-visible:bg-secondary focus-visible:outline-none"
-              >
-                <item.icon className="mt-0.5 h-[1.15rem] w-[1.15rem] shrink-0 text-primary" />
-                <span className="min-w-0">
-                  <span className="flex items-center gap-2">
-                    <span className="text-[0.95rem] font-semibold text-foreground">{item.title}</span>
-                    {item.badge ? (
-                      <span className="rounded-md bg-primary-soft px-1.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-primary">
-                        {item.badge}
+              {group.items.map((item) => (
+                <a
+                  key={item.title}
+                  href="#features"
+                  data-mega-item
+                  className="group flex items-start gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-secondary focus-visible:bg-secondary focus-visible:outline-none"
+                >
+                  <item.icon className="mt-0.5 h-[1.15rem] w-[1.15rem] shrink-0 text-primary" />
+                  <span className="min-w-0">
+                    <span className="flex items-center gap-2">
+                      <span className="text-[0.95rem] font-semibold text-foreground">
+                        {item.title}
+                      </span>
+                      {item.badge ? (
+                        <span className="rounded-md bg-primary-soft px-1.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-primary">
+                          {item.badge}
+                        </span>
+                      ) : null}
+                    </span>
+                    {item.description ? (
+                      <span className="mt-0.5 block text-[0.85rem] leading-snug text-muted-foreground">
+                        {item.description}
                       </span>
                     ) : null}
                   </span>
-                  {item.description ? (
-                    <span className="mt-0.5 block text-[0.85rem] leading-snug text-muted-foreground">
-                      {item.description}
-                    </span>
-                  ) : null}
-                </span>
-              </a>
-            ))}
+                </a>
+              ))}
             </div>
           </div>
-
         ))}
       </div>
       {entry.footerLink ? (
@@ -180,17 +181,13 @@ export function Header() {
                 aria-haspopup="true"
                 onMouseEnter={() => openMenu(item.label)}
                 onFocus={() => openMenu(item.label, 0)}
-                onClick={() =>
-                  active === item.label ? closeMenu(0) : openMenu(item.label, 0)
-                }
+                onClick={() => (active === item.label ? closeMenu(0) : openMenu(item.label, 0))}
                 onKeyDown={(e) => {
                   if (e.key === "ArrowDown") {
                     e.preventDefault();
                     openMenu(item.label, 0);
                     window.setTimeout(() => {
-                      panelRef.current
-                        ?.querySelector<HTMLElement>("[data-mega-item]")
-                        ?.focus();
+                      panelRef.current?.querySelector<HTMLElement>("[data-mega-item]")?.focus();
                     }, 30);
                   }
                 }}
@@ -238,12 +235,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            type="button"
+          <Link
+            to="/login"
             className="hidden rounded-xl border border-border px-5 py-2.5 text-[0.95rem] font-semibold text-foreground transition-colors hover:bg-secondary sm:block"
           >
             Log in
-          </button>
+          </Link>
           <button
             type="button"
             className="cta-gradient hidden items-center gap-2 rounded-xl px-5 py-2.5 text-[0.95rem] font-semibold text-primary-foreground shadow-[0_8px_20px_-8px_oklch(0.45_0.24_280/0.6)] transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"
@@ -270,9 +267,7 @@ export function Header() {
                 <button
                   type="button"
                   aria-expanded={mobileSection === item.label}
-                  onClick={() =>
-                    setMobileSection((s) => (s === item.label ? null : item.label))
-                  }
+                  onClick={() => setMobileSection((s) => (s === item.label ? null : item.label))}
                   className="flex w-full items-center justify-between py-4 text-left text-[1rem] font-semibold text-foreground"
                 >
                   {item.label}

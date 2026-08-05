@@ -108,7 +108,8 @@ export const NAV: NavEntry[] = [
           },
           {
             title: "API",
-            description: "Connect Grodo to your agents, automation tools, or build something entirely new",
+            description:
+              "Connect Grodo to your agents, automation tools, or build something entirely new",
             icon: Code2,
           },
         ],
@@ -247,5 +248,5 @@ export const NAV: NavEntry[] = [
       },
     ],
   },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Pricing", href: "/pricing" },
 ];
