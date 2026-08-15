@@ -127,11 +127,7 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
-  --gradient-cta: linear-gradient(
-    100deg,
-    oklch(0.42 0.235 277) 0%,
-    oklch(0.5 0.245 281) 100%
-  );
+  --gradient-cta: linear-gradient(100deg, oklch(0.42 0.235 277) 0%, oklch(0.5 0.245 281) 100%);
   --gradient-banner: linear-gradient(
     100deg,
     oklch(0.4 0.23 277) 0%,
@@ -167,10 +163,8 @@
   --color-icon-pink: var(--icon-pink);
   --color-icon-blue: var(--icon-blue);
   --color-icon-green: var(--icon-green);
-  --font-sans:
-    "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display:
-    "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -263,24 +257,45 @@
   }
 }
 
-
 /* --- directional scroll reveal (feature showcase) ------------------- */
 
 @keyframes grodo-reveal-up {
-  from { opacity: 0; transform: translate3d(0, 28px, 0); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 @keyframes grodo-reveal-left {
-  from { opacity: 0; transform: translate3d(-38px, 0, 0); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translate3d(-38px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 @keyframes grodo-reveal-right {
-  from { opacity: 0; transform: translate3d(38px, 0, 0); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translate3d(38px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 @keyframes grodo-reveal-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @utility rv {
@@ -301,9 +316,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rv { opacity: 1 !important; }
+  .rv {
+    opacity: 1 !important;
+  }
 }
-
 
 /* --- dark product surfaces (auth onboarding + app dashboard) --------- */
 
@@ -331,8 +347,12 @@
 }
 
 @keyframes grodo-stars-drift {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(0, -40px, 0); }
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -40px, 0);
+  }
 }
 
 @utility starfield {
@@ -345,5 +365,11 @@
     radial-gradient(circle at 71% 18%, oklch(1 0 0 / 0.45) 0.8px, transparent 1.2px),
     radial-gradient(circle at 88% 74%, oklch(1 0 0 / 0.4) 0.7px, transparent 1.1px),
     radial-gradient(circle at 55% 88%, oklch(1 0 0 / 0.3) 0.7px, transparent 1.1px);
-  background-size: 100% 100%, 190px 190px, 260px 260px, 320px 320px, 230px 230px, 290px 290px;
+  background-size:
+    100% 100%,
+    190px 190px,
+    260px 260px,
+    320px 320px,
+    230px 230px,
+    290px 290px;
 }

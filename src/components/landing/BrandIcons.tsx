@@ -163,7 +163,16 @@ export const BlueskyIcon = ({ className }: P) => (
 export const GoogleBusinessIcon = ({ className }: P) => (
   <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
     <path fill="#4285F4" d="M3 9h18l-1.4-4.5A2 2 0 0 0 17.7 3H6.3a2 2 0 0 0-1.9 1.5z" />
-    <rect x="4" y="10" width="16" height="11" rx="1.6" fill="#fff" stroke="#4285F4" strokeWidth="1.3" />
+    <rect
+      x="4"
+      y="10"
+      width="16"
+      height="11"
+      rx="1.6"
+      fill="#fff"
+      stroke="#4285F4"
+      strokeWidth="1.3"
+    />
     <rect x="6.4" y="12.6" width="5" height="4" rx="0.6" fill="#34A853" />
     <rect x="12.8" y="12.6" width="4.8" height="1.2" rx="0.6" fill="#FBBC05" />
     <rect x="12.8" y="15.2" width="4.8" height="1.2" rx="0.6" fill="#EA4335" />

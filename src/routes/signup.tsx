@@ -105,7 +105,14 @@ function FloatingDashboard() {
         <div className="mt-1.5 flex items-center gap-2.5">
           <span className="relative inline-flex h-[54px] w-[54px]">
             <svg viewBox="0 0 80 80" className="h-full w-full -rotate-90">
-              <circle cx="40" cy="40" r="34" fill="none" strokeWidth="8" stroke="var(--secondary)" />
+              <circle
+                cx="40"
+                cy="40"
+                r="34"
+                fill="none"
+                strokeWidth="8"
+                stroke="var(--secondary)"
+              />
               <circle
                 cx="40"
                 cy="40"
