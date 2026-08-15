@@ -140,3 +140,41 @@ export function AppleIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export const MastodonIcon = ({ className }: P) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="6" fill="#563ACC" />
+    <path
+      fill="#fff"
+      d="M17.6 13.4c-.2 1-1.8 2.1-3.6 2.3-1.1.1-2.2.2-3.3.1-1.8-.1-3.2-.5-3.2-.5 0 .2 0 .4.1.5.2 1.1 1.2 1.2 2.2 1.2 1 .1 1.8 0 1.8 0v1s-.7.1-1.4 0c-1.4-.1-3.5-.3-3.9-2.6-.1-.5-.2-1-.2-1.6 0-2.7.2-3.3.2-3.3.2-1.7 1.6-2.5 3.2-2.6 1.5-.1 2.6 0 2.6 0h.1s1.1-.1 2.6 0c1.6.1 3 .9 3.2 2.6 0 0 .2.6.2 3.3 0 0 0 0 0 0zm-1.8-3c0-.7-.2-1.2-.6-1.6-.4-.4-.9-.6-1.5-.6-.7 0-1.2.3-1.6.8l-.3.6-.3-.6c-.4-.5-.9-.8-1.6-.8-.6 0-1.1.2-1.5.6-.4.4-.6.9-.6 1.6v3.1h1.2v-3c0-.7.3-1 .9-1 .6 0 .9.4.9 1.2v1.7h1.2v-1.7c0-.8.3-1.2.9-1.2.6 0 .9.3.9 1v3h1.2z"
+    />
+  </svg>
+);
+
+export const BlueskyIcon = ({ className }: P) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+    <path
+      fill="#0285FF"
+      d="M6.2 4.3C8.5 6 11 9.5 12 11.4c1-1.9 3.5-5.4 5.8-7.1 1.7-1.2 4.2-2.2 4.2 .7 0 .6-.3 4.9-.5 5.6-.6 2.4-3 3-5.2 2.6 3.8.7 4.8 2.8 2.7 5-4 4.1-5.7-1-6.1-2.3-.1-.2-.1-.4-.2-.4s-.1.2-.2.4c-.4 1.3-2.1 6.4-6.1 2.3-2.1-2.2-1.1-4.3 2.7-5-2.2.4-4.6-.2-5.2-2.6C3.7 9.9 3.4 5.6 3.4 5c0-2.9 2.5-1.9 4.2-.7z"
+    />
+  </svg>
+);
+
+export const GoogleBusinessIcon = ({ className }: P) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+    <path fill="#4285F4" d="M3 9h18l-1.4-4.5A2 2 0 0 0 17.7 3H6.3a2 2 0 0 0-1.9 1.5z" />
+    <rect
+      x="4"
+      y="10"
+      width="16"
+      height="11"
+      rx="1.6"
+      fill="#fff"
+      stroke="#4285F4"
+      strokeWidth="1.3"
+    />
+    <rect x="6.4" y="12.6" width="5" height="4" rx="0.6" fill="#34A853" />
+    <rect x="12.8" y="12.6" width="4.8" height="1.2" rx="0.6" fill="#FBBC05" />
+    <rect x="12.8" y="15.2" width="4.8" height="1.2" rx="0.6" fill="#EA4335" />
+  </svg>
+);
