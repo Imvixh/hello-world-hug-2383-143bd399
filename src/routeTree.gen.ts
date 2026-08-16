@@ -10,11 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PublishRouteImport } from './routes/publish'
+import { Route as ScheduledRouteImport } from './routes/scheduled'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as CreateIndexRouteImport } from './routes/create.index'
 import { Route as CreateEditorRouteImport } from './routes/create.editor'
@@ -27,6 +29,11 @@ import { Route as OnboardingWelcomeRouteImport } from './routes/onboarding.welco
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreateRoute = CreateRouteImport.update({
@@ -52,6 +59,11 @@ const PricingRoute = PricingRouteImport.update({
 const PublishRoute = PublishRouteImport.update({
   id: '/publish',
   path: '/publish',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduledRoute = ScheduledRouteImport.update({
+  id: '/scheduled',
+  path: '/scheduled',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SignupRoute = SignupRouteImport.update({
@@ -97,11 +109,13 @@ const OnboardingWelcomeRoute = OnboardingWelcomeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
   '/create': typeof CreateRouteWithChildren
   '/dashboard': typeof DashboardRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/publish': typeof PublishRoute
+  '/scheduled': typeof ScheduledRoute
   '/signup': typeof SignupRoute
   '/create/editor': typeof CreateEditorRoute
   '/create/media': typeof CreateMediaRoute
@@ -113,10 +127,12 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
   '/dashboard': typeof DashboardRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/publish': typeof PublishRoute
+  '/scheduled': typeof ScheduledRoute
   '/signup': typeof SignupRoute
   '/create/editor': typeof CreateEditorRoute
   '/create/media': typeof CreateMediaRoute
@@ -129,11 +145,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
   '/create': typeof CreateRouteWithChildren
   '/dashboard': typeof DashboardRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/publish': typeof PublishRoute
+  '/scheduled': typeof ScheduledRoute
   '/signup': typeof SignupRoute
   '/create/editor': typeof CreateEditorRoute
   '/create/media': typeof CreateMediaRoute
@@ -147,11 +165,13 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/analytics'
     | '/create'
     | '/dashboard'
     | '/login'
     | '/pricing'
     | '/publish'
+    | '/scheduled'
     | '/signup'
     | '/create/editor'
     | '/create/media'
@@ -163,10 +183,12 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/analytics'
     | '/dashboard'
     | '/login'
     | '/pricing'
     | '/publish'
+    | '/scheduled'
     | '/signup'
     | '/create/editor'
     | '/create/media'
@@ -178,11 +200,13 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/analytics'
     | '/create'
     | '/dashboard'
     | '/login'
     | '/pricing'
     | '/publish'
+    | '/scheduled'
     | '/signup'
     | '/create/editor'
     | '/create/media'
@@ -195,11 +219,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
   CreateRoute: typeof CreateRouteWithChildren
   DashboardRoute: typeof DashboardRoute
   LoginRoute: typeof LoginRoute
   PricingRoute: typeof PricingRoute
   PublishRoute: typeof PublishRoute
+  ScheduledRoute: typeof ScheduledRoute
   SignupRoute: typeof SignupRoute
   OnboardingChannelsRoute: typeof OnboardingChannelsRoute
   OnboardingRoleRoute: typeof OnboardingRoleRoute
@@ -214,6 +240,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/create': {
@@ -249,6 +282,13 @@ declare module '@tanstack/react-router' {
       path: '/publish'
       fullPath: '/publish'
       preLoaderRoute: typeof PublishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scheduled': {
+      id: '/scheduled'
+      path: '/scheduled'
+      fullPath: '/scheduled'
+      preLoaderRoute: typeof ScheduledRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/signup': {
@@ -327,11 +367,13 @@ const CreateRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
   CreateRoute: CreateRouteWithChildren,
   DashboardRoute: DashboardRoute,
   LoginRoute: LoginRoute,
   PricingRoute: PricingRoute,
   PublishRoute: PublishRoute,
+  ScheduledRoute: ScheduledRoute,
   SignupRoute: SignupRoute,
   OnboardingChannelsRoute: OnboardingChannelsRoute,
   OnboardingRoleRoute: OnboardingRoleRoute,
