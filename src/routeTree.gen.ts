@@ -10,10 +10,15 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CreateRouteImport } from './routes/create'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PublishRouteImport } from './routes/publish'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as CreateIndexRouteImport } from './routes/create.index'
+import { Route as CreateEditorRouteImport } from './routes/create.editor'
+import { Route as CreateMediaRouteImport } from './routes/create.media'
 import { Route as OnboardingChannelsRouteImport } from './routes/onboarding.channels'
 import { Route as OnboardingRoleRouteImport } from './routes/onboarding.role'
 import { Route as OnboardingSourceRouteImport } from './routes/onboarding.source'
@@ -22,6 +27,11 @@ import { Route as OnboardingWelcomeRouteImport } from './routes/onboarding.welco
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreateRoute = CreateRouteImport.update({
+  id: '/create',
+  path: '/create',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -39,10 +49,30 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PublishRoute = PublishRouteImport.update({
+  id: '/publish',
+  path: '/publish',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
   getParentRoute: () => rootRouteImport,
+} as any)
+const CreateIndexRoute = CreateIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CreateRoute,
+} as any)
+const CreateEditorRoute = CreateEditorRouteImport.update({
+  id: '/editor',
+  path: '/editor',
+  getParentRoute: () => CreateRoute,
+} as any)
+const CreateMediaRoute = CreateMediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => CreateRoute,
 } as any)
 const OnboardingChannelsRoute = OnboardingChannelsRouteImport.update({
   id: '/onboarding/channels',
@@ -67,79 +97,109 @@ const OnboardingWelcomeRoute = OnboardingWelcomeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/create': typeof CreateRouteWithChildren
   '/dashboard': typeof DashboardRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
+  '/publish': typeof PublishRoute
   '/signup': typeof SignupRoute
+  '/create/editor': typeof CreateEditorRoute
+  '/create/media': typeof CreateMediaRoute
   '/onboarding/channels': typeof OnboardingChannelsRoute
   '/onboarding/role': typeof OnboardingRoleRoute
   '/onboarding/source': typeof OnboardingSourceRoute
   '/onboarding/welcome': typeof OnboardingWelcomeRoute
+  '/create/': typeof CreateIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
+  '/publish': typeof PublishRoute
   '/signup': typeof SignupRoute
+  '/create/editor': typeof CreateEditorRoute
+  '/create/media': typeof CreateMediaRoute
   '/onboarding/channels': typeof OnboardingChannelsRoute
   '/onboarding/role': typeof OnboardingRoleRoute
   '/onboarding/source': typeof OnboardingSourceRoute
   '/onboarding/welcome': typeof OnboardingWelcomeRoute
+  '/create': typeof CreateIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/create': typeof CreateRouteWithChildren
   '/dashboard': typeof DashboardRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
+  '/publish': typeof PublishRoute
   '/signup': typeof SignupRoute
+  '/create/editor': typeof CreateEditorRoute
+  '/create/media': typeof CreateMediaRoute
   '/onboarding/channels': typeof OnboardingChannelsRoute
   '/onboarding/role': typeof OnboardingRoleRoute
   '/onboarding/source': typeof OnboardingSourceRoute
   '/onboarding/welcome': typeof OnboardingWelcomeRoute
+  '/create/': typeof CreateIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/create'
     | '/dashboard'
     | '/login'
     | '/pricing'
+    | '/publish'
     | '/signup'
+    | '/create/editor'
+    | '/create/media'
     | '/onboarding/channels'
     | '/onboarding/role'
     | '/onboarding/source'
     | '/onboarding/welcome'
+    | '/create/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/dashboard'
     | '/login'
     | '/pricing'
+    | '/publish'
     | '/signup'
+    | '/create/editor'
+    | '/create/media'
     | '/onboarding/channels'
     | '/onboarding/role'
     | '/onboarding/source'
     | '/onboarding/welcome'
+    | '/create'
   id:
     | '__root__'
     | '/'
+    | '/create'
     | '/dashboard'
     | '/login'
     | '/pricing'
+    | '/publish'
     | '/signup'
+    | '/create/editor'
+    | '/create/media'
     | '/onboarding/channels'
     | '/onboarding/role'
     | '/onboarding/source'
     | '/onboarding/welcome'
+    | '/create/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CreateRoute: typeof CreateRouteWithChildren
   DashboardRoute: typeof DashboardRoute
   LoginRoute: typeof LoginRoute
   PricingRoute: typeof PricingRoute
+  PublishRoute: typeof PublishRoute
   SignupRoute: typeof SignupRoute
   OnboardingChannelsRoute: typeof OnboardingChannelsRoute
   OnboardingRoleRoute: typeof OnboardingRoleRoute
@@ -154,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/create': {
+      id: '/create'
+      path: '/create'
+      fullPath: '/create'
+      preLoaderRoute: typeof CreateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -177,12 +244,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/publish': {
+      id: '/publish'
+      path: '/publish'
+      fullPath: '/publish'
+      preLoaderRoute: typeof PublishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/signup': {
       id: '/signup'
       path: '/signup'
       fullPath: '/signup'
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/create/': {
+      id: '/create/'
+      path: '/'
+      fullPath: '/create/'
+      preLoaderRoute: typeof CreateIndexRouteImport
+      parentRoute: typeof CreateRoute
+    }
+    '/create/editor': {
+      id: '/create/editor'
+      path: '/editor'
+      fullPath: '/create/editor'
+      preLoaderRoute: typeof CreateEditorRouteImport
+      parentRoute: typeof CreateRoute
+    }
+    '/create/media': {
+      id: '/create/media'
+      path: '/media'
+      fullPath: '/create/media'
+      preLoaderRoute: typeof CreateMediaRouteImport
+      parentRoute: typeof CreateRoute
     }
     '/onboarding/channels': {
       id: '/onboarding/channels'
@@ -215,11 +310,28 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface CreateRouteChildren {
+  CreateEditorRoute: typeof CreateEditorRoute
+  CreateMediaRoute: typeof CreateMediaRoute
+  CreateIndexRoute: typeof CreateIndexRoute
+}
+
+const CreateRouteChildren: CreateRouteChildren = {
+  CreateEditorRoute: CreateEditorRoute,
+  CreateMediaRoute: CreateMediaRoute,
+  CreateIndexRoute: CreateIndexRoute,
+}
+
+const CreateRouteWithChildren =
+  CreateRoute._addFileChildren(CreateRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CreateRoute: CreateRouteWithChildren,
   DashboardRoute: DashboardRoute,
   LoginRoute: LoginRoute,
   PricingRoute: PricingRoute,
+  PublishRoute: PublishRoute,
   SignupRoute: SignupRoute,
   OnboardingChannelsRoute: OnboardingChannelsRoute,
   OnboardingRoleRoute: OnboardingRoleRoute,
