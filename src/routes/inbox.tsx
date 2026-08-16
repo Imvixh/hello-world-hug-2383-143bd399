@@ -55,7 +55,11 @@ function InboxPage() {
         <Panel className="p-0">
           {items.length === 0 ? (
             <div className="p-6">
-              <EmptyState icon={InboxIcon} title="Nothing here" description="No items in this tab." />
+              <EmptyState
+                icon={InboxIcon}
+                title="Nothing here"
+                description="No items in this tab."
+              />
             </div>
           ) : (
             <ul className="divide-y divide-border">

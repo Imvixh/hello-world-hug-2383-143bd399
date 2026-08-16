@@ -74,8 +74,8 @@ function SettingsPage() {
         {tab === "Profile" ? (
           <div className="space-y-4">
             {[
-              { id: "name", label: "Full name", value: previewUser.fullName },
-              { id: "email", label: "Email", value: previewUser.email },
+              { id: "name", label: "Full name", value: previewUser.firstName },
+              { id: "email", label: "Email", value: "spradha@grodo.app" },
               { id: "handle", label: "Handle", value: previewUser.handle },
             ].map((f) => (
               <div key={f.id}>
@@ -109,7 +109,9 @@ function SettingsPage() {
                   <span className="flex min-w-0 items-center gap-3">
                     <Icon className="h-4 w-4 shrink-0" />
                     <span className="min-w-0">
-                      <span className="block truncate text-[0.87rem] font-semibold">{a.handle}</span>
+                      <span className="block truncate text-[0.87rem] font-semibold">
+                        {a.handle}
+                      </span>
                       <span className="block text-[0.75rem] text-muted-foreground">{name}</span>
                     </span>
                   </span>

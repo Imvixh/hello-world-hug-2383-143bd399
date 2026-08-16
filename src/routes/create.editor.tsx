@@ -25,23 +25,57 @@ type Field = {
 
 const FIELDS: Record<PlatformId, Field[]> = {
   instagram: [
-    { key: "caption", label: "Caption", type: "textarea", ai: true, placeholder: "Write a caption" },
-    { key: "hashtags", label: "Hashtags", type: "textarea", ai: true, placeholder: "#grodo #reels" },
+    {
+      key: "caption",
+      label: "Caption",
+      type: "textarea",
+      ai: true,
+      placeholder: "Write a caption",
+    },
+    {
+      key: "hashtags",
+      label: "Hashtags",
+      type: "textarea",
+      ai: true,
+      placeholder: "#grodo #reels",
+    },
     { key: "tags", label: "Tags", type: "input", placeholder: "@collaborator" },
     { key: "thumbnail", label: "Thumbnail (cover frame)", type: "input", placeholder: "00:03" },
     { key: "cta", label: "Call to action", type: "input", placeholder: "Link in bio" },
   ],
   facebook: [
-    { key: "caption", label: "Caption", type: "textarea", ai: true, placeholder: "Write a caption" },
+    {
+      key: "caption",
+      label: "Caption",
+      type: "textarea",
+      ai: true,
+      placeholder: "Write a caption",
+    },
     { key: "hashtags", label: "Hashtags", type: "input", ai: true, placeholder: "#grodo" },
     { key: "tags", label: "Tags", type: "input", placeholder: "Tag a page or person" },
   ],
   youtube: [
     { key: "title", label: "Title", type: "input", ai: true, placeholder: "Video title" },
-    { key: "description", label: "Description", type: "textarea", ai: true, placeholder: "Describe the video" },
+    {
+      key: "description",
+      label: "Description",
+      type: "textarea",
+      ai: true,
+      placeholder: "Describe the video",
+    },
     { key: "tags", label: "Tags", type: "input", ai: true, placeholder: "editing, workflow" },
-    { key: "thumbnail", label: "Thumbnail", type: "input", placeholder: "Choose a frame or upload" },
-    { key: "visibility", label: "Visibility", type: "select", options: ["Public", "Unlisted", "Private"] },
+    {
+      key: "thumbnail",
+      label: "Thumbnail",
+      type: "input",
+      placeholder: "Choose a frame or upload",
+    },
+    {
+      key: "visibility",
+      label: "Visibility",
+      type: "select",
+      options: ["Public", "Unlisted", "Private"],
+    },
     {
       key: "category",
       label: "Category",
@@ -50,13 +84,25 @@ const FIELDS: Record<PlatformId, Field[]> = {
     },
   ],
   tiktok: [
-    { key: "caption", label: "Caption", type: "textarea", ai: true, placeholder: "Write a caption" },
+    {
+      key: "caption",
+      label: "Caption",
+      type: "textarea",
+      ai: true,
+      placeholder: "Write a caption",
+    },
     { key: "hashtags", label: "Hashtags", type: "input", ai: true, placeholder: "#fyp" },
     { key: "thumbnail", label: "Cover", type: "input", placeholder: "Pick a cover frame" },
     { key: "duet", label: "Who can duet", type: "select", options: ["Everyone", "Friends", "Off"] },
   ],
   x: [
-    { key: "text", label: "Post text", type: "textarea", ai: true, placeholder: "What's happening?" },
+    {
+      key: "text",
+      label: "Post text",
+      type: "textarea",
+      ai: true,
+      placeholder: "What's happening?",
+    },
     { key: "hashtags", label: "Hashtags", type: "input", ai: true, placeholder: "#build" },
   ],
 };

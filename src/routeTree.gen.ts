@@ -11,12 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as InboxRouteImport } from './routes/inbox'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PublishRouteImport } from './routes/publish'
 import { Route as ScheduledRouteImport } from './routes/scheduled'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as CreateIndexRouteImport } from './routes/create.index'
 import { Route as CreateEditorRouteImport } from './routes/create.editor'
@@ -36,6 +39,11 @@ const AnalyticsRoute = AnalyticsRouteImport.update({
   path: '/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AssistantRoute = AssistantRouteImport.update({
+  id: '/assistant',
+  path: '/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CreateRoute = CreateRouteImport.update({
   id: '/create',
   path: '/create',
@@ -44,6 +52,11 @@ const CreateRoute = CreateRouteImport.update({
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InboxRoute = InboxRouteImport.update({
+  id: '/inbox',
+  path: '/inbox',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -64,6 +77,11 @@ const PublishRoute = PublishRouteImport.update({
 const ScheduledRoute = ScheduledRouteImport.update({
   id: '/scheduled',
   path: '/scheduled',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SignupRoute = SignupRouteImport.update({
@@ -110,12 +128,15 @@ const OnboardingWelcomeRoute = OnboardingWelcomeRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/assistant': typeof AssistantRoute
   '/create': typeof CreateRouteWithChildren
   '/dashboard': typeof DashboardRoute
+  '/inbox': typeof InboxRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/publish': typeof PublishRoute
   '/scheduled': typeof ScheduledRoute
+  '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/create/editor': typeof CreateEditorRoute
   '/create/media': typeof CreateMediaRoute
@@ -128,11 +149,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/assistant': typeof AssistantRoute
   '/dashboard': typeof DashboardRoute
+  '/inbox': typeof InboxRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/publish': typeof PublishRoute
   '/scheduled': typeof ScheduledRoute
+  '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/create/editor': typeof CreateEditorRoute
   '/create/media': typeof CreateMediaRoute
@@ -146,12 +170,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/assistant': typeof AssistantRoute
   '/create': typeof CreateRouteWithChildren
   '/dashboard': typeof DashboardRoute
+  '/inbox': typeof InboxRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/publish': typeof PublishRoute
   '/scheduled': typeof ScheduledRoute
+  '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/create/editor': typeof CreateEditorRoute
   '/create/media': typeof CreateMediaRoute
@@ -166,12 +193,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/analytics'
+    | '/assistant'
     | '/create'
     | '/dashboard'
+    | '/inbox'
     | '/login'
     | '/pricing'
     | '/publish'
     | '/scheduled'
+    | '/settings'
     | '/signup'
     | '/create/editor'
     | '/create/media'
@@ -184,11 +214,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/analytics'
+    | '/assistant'
     | '/dashboard'
+    | '/inbox'
     | '/login'
     | '/pricing'
     | '/publish'
     | '/scheduled'
+    | '/settings'
     | '/signup'
     | '/create/editor'
     | '/create/media'
@@ -201,12 +234,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/analytics'
+    | '/assistant'
     | '/create'
     | '/dashboard'
+    | '/inbox'
     | '/login'
     | '/pricing'
     | '/publish'
     | '/scheduled'
+    | '/settings'
     | '/signup'
     | '/create/editor'
     | '/create/media'
@@ -220,12 +256,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnalyticsRoute: typeof AnalyticsRoute
+  AssistantRoute: typeof AssistantRoute
   CreateRoute: typeof CreateRouteWithChildren
   DashboardRoute: typeof DashboardRoute
+  InboxRoute: typeof InboxRoute
   LoginRoute: typeof LoginRoute
   PricingRoute: typeof PricingRoute
   PublishRoute: typeof PublishRoute
   ScheduledRoute: typeof ScheduledRoute
+  SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
   OnboardingChannelsRoute: typeof OnboardingChannelsRoute
   OnboardingRoleRoute: typeof OnboardingRoleRoute
@@ -249,6 +288,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/assistant': {
+      id: '/assistant'
+      path: '/assistant'
+      fullPath: '/assistant'
+      preLoaderRoute: typeof AssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/create': {
       id: '/create'
       path: '/create'
@@ -261,6 +307,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inbox': {
+      id: '/inbox'
+      path: '/inbox'
+      fullPath: '/inbox'
+      preLoaderRoute: typeof InboxRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -289,6 +342,13 @@ declare module '@tanstack/react-router' {
       path: '/scheduled'
       fullPath: '/scheduled'
       preLoaderRoute: typeof ScheduledRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/signup': {
@@ -368,12 +428,15 @@ const CreateRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnalyticsRoute: AnalyticsRoute,
+  AssistantRoute: AssistantRoute,
   CreateRoute: CreateRouteWithChildren,
   DashboardRoute: DashboardRoute,
+  InboxRoute: InboxRoute,
   LoginRoute: LoginRoute,
   PricingRoute: PricingRoute,
   PublishRoute: PublishRoute,
   ScheduledRoute: ScheduledRoute,
+  SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,
   OnboardingChannelsRoute: OnboardingChannelsRoute,
   OnboardingRoleRoute: OnboardingRoleRoute,

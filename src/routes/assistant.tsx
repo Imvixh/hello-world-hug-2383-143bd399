@@ -63,9 +63,7 @@ function AssistantPage() {
       <h1 className="text-[1.4rem] font-extrabold tracking-[-0.03em] sm:text-[1.7rem]">
         AI Assistant
       </h1>
-      <p className="mt-1 text-[0.88rem] text-muted-foreground">
-        Demo responses for the prototype.
-      </p>
+      <p className="mt-1 text-[0.88rem] text-muted-foreground">Demo responses for the prototype.</p>
 
       <Panel className="mt-5 flex min-h-[520px] flex-col">
         <div className="flex-1 space-y-3 overflow-y-auto">
